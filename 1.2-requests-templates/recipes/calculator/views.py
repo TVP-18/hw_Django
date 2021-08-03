@@ -1,3 +1,4 @@
+from django.http import HttpResponse
 from django.shortcuts import render
 
 DATA = {
@@ -28,3 +29,28 @@ DATA = {
 #     'ингредиент2': количество2,
 #   }
 # }
+
+def get_total_ingredients(ingredients, count):
+    total_ingredients = {}
+    if ingredients is not None:
+        for key in ingredients:
+            total_ingredients[key] = count * ingredients[key]
+    return total_ingredients
+
+
+def recipe_view(request, recipe):
+    count = int(request.GET.get('servings', 1))
+
+    total_ingredients = get_total_ingredients(DATA.get(recipe), count)
+
+    context = {'recipe': total_ingredients}
+
+    return render(request, 'calculator/index.html', context)
+
+
+def home_view(request):
+    response = """<br>Чтобы узнать рецепт, используйте шаблон /Название/?servings=Количество
+               <br>Если параметр servings не указан, то расчет приводится на одну персону
+               <br>Например, /pasta/?servings=4"""
+
+    return HttpResponse(response)
