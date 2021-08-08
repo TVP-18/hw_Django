@@ -14,6 +14,9 @@ class Command(BaseCommand):
             phones = list(csv.DictReader(file, delimiter=';'))
 
         for phone in phones:
+            if Phone.objects.filter(id=phone['id']):
+                continue
+
             Phone.objects.create(
                 id=phone['id'],
                 name=phone['name'],
