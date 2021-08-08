@@ -1,0 +1,50 @@
+(venv) C:\Python\Модуль 4. Django\hw\dj-homeworks-drf\2.1-databases\work_with_database>python manage.py migrate
+Traceback (most recent call last):
+  File "C:\Python\Модуль 4. Django\hw\dj-homeworks-drf\2.1-databases\work_with_database\manage.py", line 15, in <module>
+    execute_from_command_line(sys.argv)
+  File "C:\Python\Модуль 4. Django\hw\dj-homeworks-drf\2.1-databases\work_with_database\venv\lib\site-packages\django\core\management\__init__.py", line 419, in ex
+ecute_from_command_line
+    utility.execute()
+  File "C:\Python\Модуль 4. Django\hw\dj-homeworks-drf\2.1-databases\work_with_database\venv\lib\site-packages\django\core\management\__init__.py", line 413, in ex
+ecute
+    self.fetch_command(subcommand).run_from_argv(self.argv)
+  File "C:\Python\Модуль 4. Django\hw\dj-homeworks-drf\2.1-databases\work_with_database\venv\lib\site-packages\django\core\management\base.py", line 354, in run_fr
+om_argv
+    self.execute(*args, **cmd_options)
+  File "C:\Python\Модуль 4. Django\hw\dj-homeworks-drf\2.1-databases\work_with_database\venv\lib\site-packages\django\core\management\base.py", line 398, in execut
+e
+    output = self.handle(*args, **options)
+  File "C:\Python\Модуль 4. Django\hw\dj-homeworks-drf\2.1-databases\work_with_database\venv\lib\site-packages\django\core\management\base.py", line 89, in wrapped
+
+    res = handle_func(*args, **kwargs)
+  File "C:\Python\Модуль 4. Django\hw\dj-homeworks-drf\2.1-databases\work_with_database\venv\lib\site-packages\django\core\management\commands\migrate.py", line 92
+, in handle
+    executor = MigrationExecutor(connection, self.migration_progress_callback)
+  File "C:\Python\Модуль 4. Django\hw\dj-homeworks-drf\2.1-databases\work_with_database\venv\lib\site-packages\django\db\migrations\executor.py", line 18, in __ini
+t__
+    self.loader = MigrationLoader(self.connection)
+  File "C:\Python\Модуль 4. Django\hw\dj-homeworks-drf\2.1-databases\work_with_database\venv\lib\site-packages\django\db\migrations\loader.py", line 53, in __init_
+_
+    self.build_graph()
+  File "C:\Python\Модуль 4. Django\hw\dj-homeworks-drf\2.1-databases\work_with_database\venv\lib\site-packages\django\db\migrations\loader.py", line 214, in build_
+graph
+    self.load_disk()
+  File "C:\Python\Модуль 4. Django\hw\dj-homeworks-drf\2.1-databases\work_with_database\venv\lib\site-packages\django\db\migrations\loader.py", line 116, in load_d
+isk
+    migration_module = import_module(migration_path)
+  File "C:\Program Files\Python39\lib\importlib\__init__.py", line 127, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1030, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1007, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 986, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 680, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 790, in exec_module
+  File "<frozen importlib._bootstrap>", line 228, in _call_with_frames_removed
+  File "C:\Python\Модуль 4. Django\hw\dj-homeworks-drf\2.1-databases\work_with_database\phones\migrations\0003_auto_20210808_1438.py", line 8, in <module>
+    class Migration(migrations.Migration):
+  File "C:\Python\Модуль 4. Django\hw\dj-homeworks-drf\2.1-databases\work_with_database\phones\migrations\0003_auto_20210808_1438.py", line 16, in Migration
+    migrations.RunPython(com.handle()),
+  File "C:\Python\Модуль 4. Django\hw\dj-homeworks-drf\2.1-databases\work_with_database\venv\lib\site-packages\django\db\migrations\operations\special.py", line 14
+4, in __init__
+    raise ValueError("RunPython must be supplied with a callable")
+ValueError: RunPython must be supplied with a callable
