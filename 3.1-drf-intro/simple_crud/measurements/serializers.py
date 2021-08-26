@@ -11,4 +11,4 @@ class ProjectModelSerializer(serializers.ModelSerializer):
 class MeasurementModelSerializer(serializers.ModelSerializer):
     class Meta:
         model = Measurement
-        fields = ['id', 'value', 'project', 'created_at', 'updated_at']
+        fields = ['id', 'value', 'project', 'image', 'created_at', 'updated_at']
