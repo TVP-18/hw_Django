@@ -23,6 +23,7 @@ from measurements import views
 
 router = DefaultRouter()
 router.register('measurement', views.MeasurementViewSet)
+router.register('project', views.ProjectViewSet)
 
 urlpatterns = [
     path('admin/', admin.site.urls),
