@@ -1,5 +1,6 @@
 from django_filters.rest_framework import DjangoFilterBackend
 from rest_framework.filters import SearchFilter
+from rest_framework.pagination import LimitOffsetPagination, PageNumberPagination
 from rest_framework.viewsets import ModelViewSet
 
 from logistic.models import Product, Stock
@@ -14,8 +15,6 @@ class ProductViewSet(ModelViewSet):
     filter_backends = [SearchFilter]
     search_fields = ['title', 'description']
 
-    # пагинация
-
 
 class StockViewSet(ModelViewSet):
     queryset = Stock.objects.all()
@@ -25,4 +24,4 @@ class StockViewSet(ModelViewSet):
     filter_backends = [DjangoFilterBackend]
     filter_fields = ['products']
 
-    # пагинация
+
