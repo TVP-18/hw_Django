@@ -51,12 +51,4 @@ class StockSerializer(serializers.ModelSerializer):
         for item in positions_new:
             StockProduct.objects.update_or_create(stock=instance, product=item["product"], defaults={**item})
 
-            # if item["product"].id in product_items_dict.keys():
-            #     # если продукт есть на складе, то обновляем данные по нему
-            #     product_items_dict.pop(item["product"].id)
-            #     StockProduct.objects.filter(stock=instance.id, product=item["product"].id).update(**item)
-            # else:
-            #     # если продукта нет, то добавляем его на склад
-            #     StockProduct.objects.create(stock=instance, **item)
-
         return stock
