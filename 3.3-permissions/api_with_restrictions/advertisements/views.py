@@ -13,6 +13,7 @@ class AdvertisementViewSet(ModelViewSet):
     """ViewSet для объявлений."""
 
     queryset = Advertisement.objects.all()
+    # queryset = Advertisement.objects.exclude(status="DRAFT")
     serializer_class = AdvertisementSerializer
 
     # фильтры по creator, status, create_at
@@ -21,14 +22,12 @@ class AdvertisementViewSet(ModelViewSet):
 
     def get_permissions(self):
         """Получение прав для действий."""
-        # if self.action in ["create", "update", "partial_update"]:
-        #     return [IsAuthenticated()]
 
         # создать объявление может зарегистрированный пользователь
         if self.action in ["create"]:
             return [IsAuthenticated()]
 
-        # обновить, удалить объявление только владелец
+        # обновить, удалить объявление только владелец или администратор
         if self.action in ["update", "partial_update", "destroy"]:
             return [IsOwnerOrAdmin()]
 
